@@ -7,12 +7,11 @@ public class TankShot : MonoBehaviour
 	public GameObject bullet;
 
 	/// <summary>砲塔</summary>
-	private GameObject cylinder;
+	public GameObject cylinder;
 
 	// Use this for initialization
 	void Start()
 	{
-		cylinder = gameObject.transform.FindChild("GunTurret/Cylinder").gameObject;
 	}
 
 	// Update is called once per frame
