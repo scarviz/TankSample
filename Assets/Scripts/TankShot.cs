@@ -13,7 +13,7 @@ public class TankShot : MonoBehaviour
 	public float shotInterval = 1.5f;
 
 	/// <summary>発射間隔の積み上げ値</summary>
-	private float stackShotInterval = 0f;
+	private float stackShotInterval = 1.5f;
 
 	// Use this for initialization
 	void Start()
