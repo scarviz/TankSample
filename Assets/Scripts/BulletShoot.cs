@@ -5,6 +5,9 @@ public class BulletShoot : MonoBehaviour {
 	/// <summary>発射速度</summary>
 	public float speed = 100f;
 
+	/// <summary>爆発のParticle</summary>
+	public GameObject explosion;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -25,6 +28,11 @@ public class BulletShoot : MonoBehaviour {
 	/// <param name="collision">衝突対象</param>
 	void OnCollisionEnter(Collision collision)
 	{
+		// 衝突時に爆発の演出
+		var expInstance = Instantiate(explosion, transform.position, transform.rotation);
+		// 1秒後に自動消滅
+		Destroy(expInstance, 1f);
+
 		// 衝突時に消滅
 		Destroy(gameObject);
 	}
