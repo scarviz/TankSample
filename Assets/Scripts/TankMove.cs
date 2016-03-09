@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TankMove : MonoBehaviour {
 	/// <summary>移動する速さ</summary>
-	public float mSpeed = 10f;
+	public float speed = 10f;
 	
 	private CharacterController mCharCtrl;
 
@@ -25,7 +25,7 @@ public class TankMove : MonoBehaviour {
 		moveDirection = transform.TransformDirection(moveDirection);
 
 		// 移動する速さ(移動量)を加味する
-		moveDirection *= mSpeed;
+		moveDirection *= speed;
 
 		// このUpdate処理(1フレーム当たり)の移動量からTankを移動させる
 		// ※ Time.deltaTimeは前回Updateが呼ばれた時からの経過時間が格納される
@@ -34,6 +34,6 @@ public class TankMove : MonoBehaviour {
 
 		// 回転(y軸中心に回転)
 		// ※ Horizontalはキー入力の左右
-		transform.Rotate(0, Input.GetAxis("Horizontal") * mSpeed, 0);
+		transform.Rotate(0, Input.GetAxis("Horizontal") * speed, 0);
 	}
 }
